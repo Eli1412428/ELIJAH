@@ -45,25 +45,41 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
+.buttons.vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
 button {
-    background: #b30000;
+    background: linear-gradient(90deg, #b30000 0%, #ff2e2e 100%);
     color: #fff;
     border: none;
     border-radius: 8px;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    margin: 0 0.5rem;
+    padding: 0.9rem 2.2rem;
+    font-size: 1.1rem;
+    margin: 0;
     cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
     box-shadow: 0 2px 8px #7b1113;
     font-weight: bold;
     letter-spacing: 1px;
+    outline: none;
+    position: relative;
+    z-index: 1;
 }
 
-button:hover {
-    background: #ff2e2e;
-    color: #232946;
-    transform: scale(1.05);
+button:hover, button:focus {
+    background: linear-gradient(90deg, #ff2e2e 0%, #b30000 100%);
+    color: #fff;
+    transform: scale(1.07) translateY(-2px);
+    box-shadow: 0 6px 24px #b30000, 0 1.5px 8px #7b1113;
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 1px 4px #7b1113;
 }
 
 .video-container {
